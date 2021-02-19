@@ -18,3 +18,4 @@ do
 done
 
 tar -czf $backupzip $backup
+echo done
