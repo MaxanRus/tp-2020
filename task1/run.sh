@@ -10,7 +10,7 @@ backupzip=$4
 mkdir -p $backup 
 
 # Создаем ищем все файлы называния которых *.расширение
-files=`find $path -name "*$.ext"`
+files=`find $path -name "*.$ext"`
 # Длина пути, считаю ее, чтобы удалить префикс и получить относительное расположение
 length=`expr length $path`
 
