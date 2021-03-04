@@ -1,31 +1,31 @@
 # Получаю переменные
-path=$1
-ext=$2
-backup=$3
-backupzip=$4
+PATH_TO=$1
+EXT=$2
+BACKUP=$3
+BACKUPZIP=$4
 
 # Создаем папку, чтобы не было ошибки, когда папка уже была добавим флаг -p
 # Это наверное костыль, но не надо писать не каких условий, да и в задании 
 # это не требовалось
-mkdir -p $backup 
+mkdir -p $BACKUP 
 
 # Создаем ищем все файлы называния которых *.расширение
-files=`find $path -name "*.$ext"`
+files=`find $PATH_TO -name "*.$EXT"`
 # Длина пути, считаю ее, чтобы удалить префикс и получить относительное расположение
-length=`expr length $path`
+length=`expr length $PATH_TO`
 
 for i in $files
 do
 	# Убираю префикс и получаю относильный путь, потом создаю цепочку папок
 	# флаг -p никогда не позволяет ругаться, что папка уже была создана
-	mkdir -p `dirname $backup/${i:length}`
+	mkdir -p `dirname $BACKUP/${i:length}`
 
 	# Просто копирую нужный файл в нужную папку(опять убирая префикс)
-	cp $i "$backup/${i:length}"
+	cp $i "$BACKUP/${i:length}"
 done
 
 # Создать архив совсем просто
-tar -czf $backupzip $backup
+tar -czf $BACKUPZIP $BACKUP
 
 # Из-за этого не сдал с первой попытки :(
 echo done
