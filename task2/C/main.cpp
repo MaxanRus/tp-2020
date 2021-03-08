@@ -3,4 +3,5 @@
 
 int main() {
   std::cout << "Hello world" << x << std::endl;
+  print();
 }
