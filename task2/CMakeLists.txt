@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.10)
 project("Test")
 
 find_package(GTest)
-find_package(Treads)
+find_package(Threads)
 
 include_directories(${GTEST_INCLUDE_DIRS})
 
