@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(SimpleLibrary)
 
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
 include_directories(include)
 
 message("БЛА БЛА БЛА")
