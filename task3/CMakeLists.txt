@@ -3,11 +3,15 @@ project(SimpleLibrary)
 
 include_directories(include)
 
-
 if(${ARM_BUILD})
-	set(CMAKE_CXX_COMPILER ${CMAKE_BINARY_DIR}/${TOOLCHAIN}/aarch64-linux-gnu-c++)
+	set(CMAKE_CXX_COMPILER ${CMAKE_SOURCE_DIR}/compiler/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-c++)
 	message(${CMAKE_CXX_COMPILER})
 endif()
+
+if(DEFINED TOOLCHAIN)
+	set(CMAKE_CXX_COMPILER ${CMAKE_BINARY_DIR}/${TOOLCHAIN}/aarch64-linux-gnu-c++)
+endif()
+
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
