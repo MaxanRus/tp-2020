@@ -19,20 +19,30 @@ include_directories(include)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
 
-add_subdirectory(src)
-
 add_executable(Main main.cpp)
 add_executable(MainLib main_lib.cpp)
+
+add_subdirectory(src)
 
 target_link_libraries(MainLib buffer)
 set_target_properties(MainLib PROPERTIES PUBLIC_HEADER ${PROJECT_SOURCE_DIR}/include/buffer.h)
 
 message(${CMAKE_INSTALL_PREFIX})
+
+set_target_properties(MainLib PROPERTIES
+	IMPORTED_LOCATION "$ORIGIN/../lib/"
+	INSTALL_RPATH "$ORIGIN/../lib/"
+)
  
 if(DEFINED CMAKE_INSTALL_PREFIX)
-	install(TARGETS Main MainLib
+	install(TARGETS Main MainLib buffer
 		LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
 		PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include
 		RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 endif()
 
+set_target_properties(MainLib PROPERTIES
+	IMPORTED_LOCATION "$ORIGIN/../lib/"
+)
+
+set(LD_LIBRARY_PATH "$ORIGIN/../lib")
