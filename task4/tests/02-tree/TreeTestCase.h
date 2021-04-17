@@ -7,7 +7,7 @@
 class TreeTestCase : public ::testing::Test {
  protected:
   boost::filesystem::path mTempFileAbs;
-  const size_t kCountDirectories = 1000;
+  const size_t kCountDirectories = 100;
 
  public:
   void CreateTemporaryDirectory();

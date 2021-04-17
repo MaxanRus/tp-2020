@@ -73,7 +73,6 @@ TEST_F(TreeTestCase, TestGetTree) {
   DeleteTemporaryDirectory();
 }
 
-/*
 TEST_F(TreeTestCase, TestThrow) {
   CreateTemporaryDirectory();
 
@@ -98,4 +97,3 @@ TEST_F(TreeTestCase, TestFilterEmptyNodes) {
 
   DeleteTemporaryDirectory();
 }
-*/

@@ -6,6 +6,7 @@ class LeapTestCase : public ::testing::Test {
  public:
   void TestLeapYears();
   void TestNotLeapYears();
-  void Less0();
+  void TestLess0();
   void TestMonthDays();
+  void TestAdd();
 };

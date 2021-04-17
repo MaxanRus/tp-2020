@@ -18,7 +18,7 @@ cpr::Response FakeWeatherFailLoadResponse::Get(const std::string& city, const cp
 
 TEST(Weather, TestAllFunctionsInWeather) {
   FakeWeather fake_weather;
-  for (int i = 0; i < 10000; ++i) {
+  for (int i = 0; i < 1000; ++i) {
     fake_weather.FindDiffBetweenTwoCities("Moscow", "Moscow");
     fake_weather.FindDiffBetweenTwoCities("London", "New-York");
     fake_weather.GetTomorrowTemperature("Krasnodar");

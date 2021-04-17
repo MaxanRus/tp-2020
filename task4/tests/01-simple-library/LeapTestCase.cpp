@@ -22,7 +22,7 @@ void LeapTestCase::TestNotLeapYears() {
   ASSERT_EQ(IsLeap(1775), false);
   ASSERT_EQ(IsLeap(1700), false);
 }
-void LeapTestCase::Less0() {
+void LeapTestCase::TestLess0() {
   EXPECT_THROW(IsLeap(-10), std::invalid_argument);
 }
 void LeapTestCase::TestMonthDays() {
@@ -33,13 +33,22 @@ void LeapTestCase::TestMonthDays() {
   EXPECT_THROW(GetMonthDays(-10, -10), std::invalid_argument);
   EXPECT_THROW(GetMonthDays(10, -10), std::invalid_argument);
 }
+void LeapTestCase::TestAdd() {
+  EXPECT_EQ(Add(1, 2), 3);
+  EXPECT_EQ(Add(-1, -2), -3);
+  EXPECT_EQ(Add(-1, 2), 1);
+}
 
 TEST_F (LeapTestCase, TestIsLeap) {
   TestLeapYears();
   TestNotLeapYears();
-  Less0();
+  TestLess0();
 }
 
 TEST_F (LeapTestCase, TestGetMonthDays) {
   TestMonthDays();
+}
+
+TEST_F(LeapTestCase, TestAdd) {
+  TestAdd();
 }
