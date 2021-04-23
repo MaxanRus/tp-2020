@@ -17,5 +17,5 @@ jobs:
       shell: bash
       
       working-directory: ${{github.workspace}}
-      run: tree
+      run: tree; echo "hello world"
       # run: cmake $GITHUB_WORKSPACE/task5; cmake --build; cmake --install
