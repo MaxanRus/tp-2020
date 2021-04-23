@@ -16,6 +16,9 @@ jobs:
     - name: Build
       shell: bash
       
-      working-directory: ${{github.workspace}}
-      run: tree; echo "hello world"
-      # run: cmake $GITHUB_WORKSPACE/task5; cmake --build; cmake --install
+      working-directory: ${{github.workspace}}/task5/build
+      # run: tree; echo "hello world"
+      run: cmake $GITHUB_WORKSPACE/task5; cmake --build; cmake --install
+      
+    - name: something
+      run: echo "hehe"
