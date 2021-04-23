@@ -16,5 +16,6 @@ jobs:
     - name: Build
       shell: bash
       
-      working-directory: ${{github.workspace}}/task5/build
-      run: cmake $GITHUB_WORKSPACE/task5; cmake --build; cmake --install
+      working-directory: ${{github.workspace}}
+      run: tree
+      # run: cmake $GITHUB_WORKSPACE/task5; cmake --build; cmake --install
