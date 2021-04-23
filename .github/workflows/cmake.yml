@@ -1,0 +1,21 @@
+name: CMake
+
+on:
+  push:
+    branches: [ task5 ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build
+      shell: bash
+      
+      working-directory: ${{github.workspace}}
+      run: tree; echo "hello world"
+      # run: cmake $GITHUB_WORKSPACE/task5; cmake --build; cmake --install
