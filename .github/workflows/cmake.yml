@@ -23,9 +23,9 @@ jobs:
     - name: Test
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
-        exec-path: CTestExe
-        report-path: "bin/test.test"
-        working-directory: "bin/"
+        exec-path:  ${{github.workspace}}/task5/bin/CTestExe
+        report-path: "test.test"
+        working-directory: ${{github.workspace}}/task5/bin/
 
     - name: tree
       shell: bash
