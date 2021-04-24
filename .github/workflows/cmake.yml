@@ -40,7 +40,9 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Distributive
-        path: ${{github.workspace}}/task5/bin/ ${{github.workspace}}/task5/lib/
+        path: |
+          ${{github.workspace}}/task5/bin/
+          ${{github.workspace}}/task5/lib/
     
       
 #     - name: something
