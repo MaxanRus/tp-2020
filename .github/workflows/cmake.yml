@@ -24,7 +24,7 @@ jobs:
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
         exec-path: "bin/CTestExe"
-        report-path: "bin/"
+        report-path: "bin/test.test"
         working-directory: "bin/"
 
     - name: tree
