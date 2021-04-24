@@ -20,8 +20,22 @@ jobs:
       # run: tree; echo "hello world"
       run: git clone https://github.com/google/googletest.git; mv googletest 3rdparty; mkdir build; cd build; cmake ..; cmake --build .
       
-    - name: something
+    - name: Test
+      uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+      with:
+        exec-path: "bin/CTestExe"
+        report-path: "hehe"
+        working-directory: "bin/"
+
+    - name: tree
       shell: bash
+      working-directory: ${{github.workspace}}/task5
+      run: tree
+
       
-      working-directory: ${{github.workspace}}
-      run: git clone https://github.com/akhtyamovpavel/ActionGtestReport.git; cd ActionGtestReport; npm install; node index.js
+#     - name: something
+#       shell: bash
+      
+#       working-directory: ${{github.workspace}}
+#       run: git clone https://github.com/akhtyamovpavel/ActionGtestReport.git; cd ActionGtestReport; npm install; node index.js
+      
