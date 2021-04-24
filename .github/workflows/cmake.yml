@@ -24,14 +24,24 @@ jobs:
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
         exec-path:  ${{github.workspace}}/task5/bin/CTestExe
-        report-path: "test.test"
+        report-path: "../report.xml"
         working-directory: ${{github.workspace}}/task5/bin/
 
     - name: tree
       shell: bash
       working-directory: ${{github.workspace}}/task5
       run: tree; ./bin/CTestExe
-
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: test-report
+        path: ${{github.workspace}}/task5/report.xml
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Distributive
+        path: ${{github.workspace}}/task5/bin/ ${{github.workspace}}/task5/lib/
+    
       
 #     - name: something
 #       shell: bash
