@@ -23,7 +23,7 @@ jobs:
     - name: Test
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
-        exec-path: "bin/CTestExe"
+        exec-path: "CTestExe"
         report-path: "bin/test.test"
         working-directory: "bin/"
 
