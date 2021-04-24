@@ -30,7 +30,7 @@ jobs:
     - name: tree
       shell: bash
       working-directory: ${{github.workspace}}/task5
-      run: tree
+      run: tree; ./bin/CTestExe
 
       
 #     - name: something
