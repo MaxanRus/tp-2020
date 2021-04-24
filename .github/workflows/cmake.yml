@@ -31,12 +31,14 @@ jobs:
       shell: bash
       working-directory: ${{github.workspace}}/task5
       run: tree; ./bin/CTestExe
-      
+    
+    - name: UploadArtifacts
+      run: echo hello world
     - uses: actions/upload-artifact@v2
       with:
         name: test-report
         path: ${{github.workspace}}/task5/report.xml
-    
+
     - uses: actions/upload-artifact@v2
       with:
         name: Distributive
