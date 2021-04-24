@@ -23,7 +23,7 @@ jobs:
     - name: Test
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with:
-        exec-path: ${{github.workspace}}/task5/bin/CTestExe
+        exec-path: ${{github.workspace}}/task5/bin/C
         report-path: "bin/test.test"
         working-directory: "bin/"
 
