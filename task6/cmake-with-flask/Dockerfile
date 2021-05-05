@@ -9,6 +9,7 @@ RUN useradd techproguser
 RUN mkdir build
 RUN cd build
 RUN cmake ..
+RUN make
 CMD ["python3.8", "app.py", "--port", "5000", "--host", "0.0.0.0"]
 # RUN python app.py
 # CMD ["ls"]
