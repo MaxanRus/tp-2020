@@ -14,10 +14,11 @@ RUN cmake ..
 RUN make
 RUN cd ..
 RUN ./bin/C
-RUN cp -r /bin/C ../
+# RUN cp -r /bin/C ../
 CMD ["python3.8", "app.py", "--port", "5000", "--host", "0.0.0.0"]
 # RUN python app.py
 # CMD ["ls"]
 # CMD ["mkdir", "build"]
 # CMD ["cd", "build"]
 # CMD ["cmake", ".."]
+
