@@ -8,13 +8,13 @@ RUN echo alkdf
 RUN apt update; apt install -y g++ cmake make python3.8 python3-pip
 RUN python3.8 -m pip install flask
 RUN useradd techproguser
-USER techproguser
 RUN mkdir build
 RUN cd build
 RUN cmake ..
 RUN make
 RUN cd ..
 RUN ./bin/C
+USER techproguser
 # RUN cp -r /bin/C ../
 CMD ["python3.8", "app.py", "--port", "5000", "--host", "0.0.0.0"]
 # RUN python app.py
