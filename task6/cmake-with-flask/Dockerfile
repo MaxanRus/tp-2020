@@ -8,6 +8,7 @@ RUN echo alkdf
 RUN apt update; apt install -y g++ cmake make python3.8 python3-pip
 RUN python3.8 -m pip install flask
 RUN useradd techproguser
+RUN su -- techproguser
 RUN mkdir build
 RUN cd build
 RUN cmake ..
